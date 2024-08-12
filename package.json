@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
+  "repository": "https://github.com/cloudnavigator2022/my-node-repo.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": "cloudnavigator",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.3.4",
