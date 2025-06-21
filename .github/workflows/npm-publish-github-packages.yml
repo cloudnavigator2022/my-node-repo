@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "."
-          target: "~/apps/my-node-app"
+          target: "~/apps/my-node-repo"
 
       - name: Restart Node App using PM2
         uses: appleboy/ssh-action@v1.0.3
