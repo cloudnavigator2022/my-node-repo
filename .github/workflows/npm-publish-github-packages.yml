@@ -20,21 +20,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Build (if needed)
-        run: |
-          echo "No build step, skipping..."
-          # If using TypeScript or bundlers, add build step here
-
-      - name: Copy Files to Server via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "."
-          target: "~/apps/my-node-repo"
-
+        
       - name: Restart Node App using PM2
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -42,6 +28,10 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/apps/my-node-repo
+            cd ~/apps/my-node-app
+            pwd
             npm install
-            pm2 restart 2
+
+   
+
+
